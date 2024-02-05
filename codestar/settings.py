@@ -37,6 +37,7 @@ ALLOWED_HOSTS = [
 CSRF_TRUSTED_ORIGINS = [
     "https://8000-marzenkas-django-blog-8yd0zblr50.us2.codeanyapp.com"]
 
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
