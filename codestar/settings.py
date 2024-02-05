@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
-if os.path.isfile('env.py'):
+if os.path.exists("env.py"):
     import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -24,19 +24,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get(
-    'django-insecure-&m%gu-ez==#b@$+_t99xi_wgv()$4vr7#$-og^=x4rdhx6lh6j')
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
-    "8000-marzenkas-django-blog-8yd0zblr50.us2.codeanyapp.com"
+    "8000-marzenkas-django-blog-8yd0zblr50.us2.codeanyapp.com",
     ".herokuapp.com"
 ]
 
-
-# Application definition
+CSRF_TRUSTED_ORIGINS = [
+    "https://8000-marzenkas-django-blog-8yd0zblr50.us2.codeanyapp.com"]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -90,13 +89,8 @@ WSGI_APPLICATION = 'codestar.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("postgres://rqqaxfxa:szX1RIjw1hQV6TGLaXXXGvhPMonFcnk-@jelani.db.elephantsql.com/rqqaxfxa"))
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
-
-CSRF_TRUSTED_ORIGINS = [
-    "https://8000-ajgreaves-blog-lesson-pl-lfv6kgfdws.us2.codeanyapp.com",
-    "https://*.herokuapp.com"
-]
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
