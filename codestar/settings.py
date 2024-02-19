@@ -32,7 +32,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     "8000-marzenkas-django-blog-8yd0zblr50.us2.codeanyapp.com",
-    ".herokuapp.com"
+    ".herokuapp.com",
+    "8000-marzenkas-djangoblog-sahc4wvwpz5.ws-eu108.gitpod.io"
 ]
 
 CSRF_TRUSTED_ORIGINS = [
