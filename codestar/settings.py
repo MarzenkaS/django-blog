@@ -40,7 +40,8 @@ CSRF_TRUSTED_ORIGINS = [
     "https://8000-marzenkas-django-blog-8yd0zblr50.us2.codeanyapp.com",
     "https://*.codeanyapp.com",
     "https://*.herokuapp.com",
-    "https://www.gitpod.io/"
+    "https://www.gitpod.io/",
+    "https://8000-marzenkas-djangoblog-sahc4wvwpz5.ws-eu108.gitpod.io"
 ]
 
 
