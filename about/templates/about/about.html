@@ -4,20 +4,28 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-4 text-center">
-      <img src="{% static 'images/nobody.jpg' %}" width="75%" />
+      <img src="{% static 'images/nobody.jpg' %}" width="75%">
     </div>
     <div class="col-8">
       <!-- Title goes between these h2 tags -->
-      <h2>{{ about.title }}</h2>
+      <h2>About Marzena</h2>
       <!-- Content goes directly underneath this -->
-      {{ about.content | safe }}
+      Zależy do jakiej definicji charakteru czy osobowości się odwołamy. Jeśli odniesiemy się do Hansa Eysencka -
+      badacza osobowości - powiemy, że osobowość to względnie stała organizacja charakteru, temperamentu, intelektu i
+      właściwości fizycznych, które determinują specyficzne sposoby przystosowania się do otoczenia. Jednak na
+      przestrzeni rozwoju psychologii teorii osobowości powstało bardzo dużo. Ważniejsze zatem zdaje się być pytanie, na
+      ile możemy kształtować nasz charakter, a na ile pozostaje on niezmienny. Charakter człowieka kształtuje się przez
+      całe życie - zarówno przez proces socjalizacji, jak i przez indywidualną aktywność danej osoby. Również wraz z
+      wiekiem w pewnym zakresie zmieniają się nasze cechy charakteru. Na ich zmienność mają wpływ wydarzenia,
+      powtarzalność pewnych sytuacji czy procesy organiczne zachodzące w naszym organizmie. Zatem na pewno częściowo
+      możemy modyfikować nasz charakter. I na takim założeniu opierają się wszelkie praktyki pomocowe (np. psychoterapia
+      czy coaching).
     </div>
   </div>
   <div class="row">
     <div class="col text-right">
       <!-- Updated on field goes in here -->
-
-      <p class="text-end"><em>Updated on: {{ about.updated_on }}</em></p>
+      <p class="text-end"><em>Updated on: </em></p>
     </div>
   </div>
 </div>
