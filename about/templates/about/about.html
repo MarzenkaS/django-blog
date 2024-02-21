@@ -6,28 +6,38 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-12 col-md-4 text-center">
-            <img src="{% static 'images/nobody.jpg' %}" width="75%">
+            {% if "placeholder" in about.profile_image.url %}
+            <img src="{% static 'images/nobody.jpg' %}" width="75%" alt="placeholder image">
+            {% else %}
+            <img src="{{ about.profile_image.url }}" width="75%" alt="{{ about.title }}">
+            {% endif %}
         </div>
         <div class="col-12 col-md-8">
-          <h2>About Marzena</h2>
-          <!-- Content goes directly underneath this -->
-          Zależy do jakiej definicji charakteru czy osobowości się odwołamy. Jeśli odniesiemy się do Hansa Eysencka -
-          badacza osobowości - powiemy, że osobowość to względnie stała organizacja charakteru, temperamentu, intelektu i
-          właściwości fizycznych, które determinują specyficzne sposoby przystosowania się do otoczenia. Jednak na
-          przestrzeni rozwoju psychologii teorii osobowości powstało bardzo dużo. Ważniejsze zatem zdaje się być pytanie, na
-          ile możemy kształtować nasz charakter, a na ile pozostaje on niezmienny. Charakter człowieka kształtuje się przez
-          całe życie - zarówno przez proces socjalizacji, jak i przez indywidualną aktywność danej osoby. Również wraz z
-          wiekiem w pewnym zakresie zmieniają się nasze cechy charakteru. Na ich zmienność mają wpływ wydarzenia,
-          powtarzalność pewnych sytuacji czy procesy organiczne zachodzące w naszym organizmie. Zatem na pewno częściowo
-          możemy modyfikować nasz charakter. I na takim założeniu opierają się wszelkie praktyki pomocowe (np. psychoterapia
-          czy coaching).
+            <h2>About Marzena</h2>
+            <!-- Content goes directly underneath this -->
+            Zależy do jakiej definicji charakteru czy osobowości się odwołamy. Jeśli odniesiemy się do Hansa Eysencka -
+            badacza osobowości - powiemy, że osobowość to względnie stała organizacja charakteru, temperamentu,
+            intelektu i
+            właściwości fizycznych, które determinują specyficzne sposoby przystosowania się do otoczenia. Jednak na
+            przestrzeni rozwoju psychologii teorii osobowości powstało bardzo dużo. Ważniejsze zatem zdaje się być
+            pytanie, na
+            ile możemy kształtować nasz charakter, a na ile pozostaje on niezmienny. Charakter człowieka kształtuje się
+            przez
+            całe życie - zarówno przez proces socjalizacji, jak i przez indywidualną aktywność danej osoby. Również wraz
+            z
+            wiekiem w pewnym zakresie zmieniają się nasze cechy charakteru. Na ich zmienność mają wpływ wydarzenia,
+            powtarzalność pewnych sytuacji czy procesy organiczne zachodzące w naszym organizmie. Zatem na pewno
+            częściowo
+            możemy modyfikować nasz charakter. I na takim założeniu opierają się wszelkie praktyki pomocowe (np.
+            psychoterapia
+            czy coaching).
         </div>
     </div>
     <div class="row">
         <div class="col text-right">
-          <!-- Updated on field goes in here -->
-    
-          <p class="text-end"><em>Updated on: 20.02.2024 {{ about.updated_on }}</em></p>
+            <!-- Updated on field goes in here -->
+
+            <p class="text-end"><em>Updated on: 20.02.2024 {{ about.updated_on }}</em></p>
         </div>
     </div>
     <div class="row justify-content-center">
@@ -41,12 +51,11 @@
 
             <!-- add your form here. Your submit button should 
                                 have the classes of btn, btn-secondary -->
-                                <form method="post">
-                                  {{ collaborate_form | crispy }}
-                                  {% csrf_token %}
-                                  <button class="btn btn-secondary"
-                                    type="submit">Submit</button>
-                                </form>                                        
+            <form method="post">
+                {{ collaborate_form | crispy }}
+                {% csrf_token %}
+                <button class="btn btn-secondary" type="submit">Submit</button>
+            </form>
         </div>
     </div>
 </div>
